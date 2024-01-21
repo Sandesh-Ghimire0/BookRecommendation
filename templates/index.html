@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>book Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    {% include 'navbar.html' %}    
+    <div class="row">
+
+      {% for i in range(book_titles|length) %}
+        <div class="col-3">
+          <div class="card mt-4 mx-4" style="width: 18rem;">
+            <img src={{images[i]}} class="card-img-top w-50" alt="Books">
+            <div class="card-body">
+              <strong>Title : </strong> <span>{{book_titles[i]}}</span><br>
+              <strong>Author : </strong> <span>{{authors[i]}}</span><br>
+              <strong>Publication Date : </strong> <span>{{publication_date[i]}}</span><br>
+              <strong>Rating : </strong> <span>{{ratings[i]}}</span><br>
+              <strong>Votes : </strong> <span>{{num_ratings[i]}}</span><br>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
